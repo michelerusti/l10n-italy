@@ -109,6 +109,8 @@ class AccountInvoice(models.Model):
         AccountMoveLine = self.env['account.move.line']
         for invoice in self:
             if invoice.customs_doc_type == 'forwarder_invoice':
+                if not invoice.forwarder_bill_of_entry_ids:
+                    raise UserError(_("No bill of entries found for this invoice"))
                 for bill_of_entry in invoice.forwarder_bill_of_entry_ids:
                     if bill_of_entry.state not in ('open', 'paid'):
                         raise UserError(
@@ -118,12 +120,15 @@ class AccountInvoice(models.Model):
                                 bill_of_entry.state)
                         )
                 advance_customs_vat_line = False
-                if invoice.forwarder_bill_of_entry_ids:
-                    for line in invoice.invoice_line_ids:
-                        if line.advance_customs_vat:
-                            advance_customs_vat_line = True
-                            break
-                if not advance_customs_vat_line:
+                for line in invoice.invoice_line_ids:
+                    if line.advance_customs_vat:
+                        advance_customs_vat_line = True
+                        break
+                boe_tax_rates = invoice.forwarder_bill_of_entry_ids.mapped(
+                    "invoice_line_ids.invoice_line_tax_ids.amount")
+                # in caso di dichiarazione d'intento inviata alla dogana,
+                # la dogana non addebita IVA
+                if not advance_customs_vat_line and list(set(boe_tax_rates)) != [0.0]:
                     raise UserError(
                         _("Forwarder invoice %s does not have lines with "
                           "'Advance Customs Vat'")
