@@ -81,13 +81,13 @@ Creare l'imposta **22% extra UE** - Acquisti:
   :alt: 22% extra UE - Acquisti
   :width: 600 px
 
-Creare il conto 'Transitorio autofatturazione':
+Creare il conto 'Transitorio autofatturazione', accessibile dalla vista di modifica del tipo inversione contabile:
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/temp_account_auto_inv.png
   :alt: conto transitorio Autofattura
   :width: 600 px
 
-Il 'Registro pagamento autofattura' deve essere configurato con il conto 'Transitorio autofatturazione' appena creato:
+Creare il 'Registro pagamento autofattura' (anch'esso accessibile dalla vista di modifica del tipo inversione contabile) che deve essere configurato con il conto 'Transitorio autofatturazione' appena creato:
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/registro_riconciliazione.png
   :alt: Registro pagamento autofattura
@@ -95,6 +95,10 @@ Il 'Registro pagamento autofattura' deve essere configurato con il conto 'Transi
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/registro_riconciliazione_2.png
   :alt: Registro pagamento autofattura (tab Configurazione)
+  :width: 600 px
+
+.. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/registro_riconciliazione_3.png
+  :alt: Conto bancario da collegare
   :width: 600 px
 
 Modificare il tipo inversione contabile **Intra-UE (autofattura)**:
@@ -111,10 +115,10 @@ Modificare il tipo inversione contabile **Extra-UE (autofattura)**:
   :alt: inversione contabile con Autofattura
   :width: 600 px
 
-Il 'Registro autofattura passiva' deve essere di tipo 'Acquisto'.
+Il 'Registro autofattura passiva' ('Registro autofattura fornitore') deve essere di tipo 'Acquisto'.
 
 
-Nella posizione fiscale, impostare il tipo inversione contabile:
+Aggiungere le posizioni fiscali ed impostare il tipo inversione contabile:
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/fiscal_pos_intra.png
   :alt: Impostazione posizioni fiscali Intra CEE
