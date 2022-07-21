@@ -160,13 +160,13 @@ Create the tax **22% extra EU** - Purchase:
   :alt: 22% extra UE - Purchase
   :width: 600 px
 
-Create the account 'Self Invoice Transitory' as follows:
+Create the account 'Self Invoice Transitory' as follows (accessible in the 'reverse charge type' edit view):
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/temp_account_auto_inv.png
   :alt: Self Invoice Transitory Account
   :width: 600 px
 
-The 'Self Invoice Payment' Journal has to be configured with the just created 'Self Invoice Transitory' account:
+The 'Self Invoice Payment' Journal (this too accessible in the 'reverse charge type' edit view) has to be configured with the just created 'Self Invoice Transitory' account:
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/registro_riconciliazione.png
   :alt: Registro pagamento autofattura
@@ -174,6 +174,10 @@ The 'Self Invoice Payment' Journal has to be configured with the just created 'S
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/registro_riconciliazione_2.png
   :alt: Registro pagamento autofattura (tab Configurazione)
+  :width: 600 px
+
+.. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/registro_riconciliazione_3.png
+  :alt: Conto bancario da collegare
   :width: 600 px
 
 Edit the reverse charge type **Intra-EU (self-invoice)**:
@@ -192,7 +196,7 @@ Edit the reverse charge type **Extra-EU (self-invoice)** :
 
 The 'Supplier Self Invoice Journal' has to be of type 'Purchase'.
 
-In the fiscal position, set the reverse charge type:
+Add the fiscal position and set the reverse charge type:
 
 .. figure:: https://raw.githubusercontent.com/OCA/l10n-italy/14.0/l10n_it_reverse_charge/static/description/fiscal_pos_intra.png
   :alt: Impostazione posizioni fiscali Intra CEE
