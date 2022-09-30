@@ -1494,7 +1494,6 @@
 	Function: epson object
 	Description: append constructors to window object
 	*/
-
 	// Core module 'pos_epson_printer' appends constructors to the same window object so
 	// this implementation avoid to override the epson object.
 	if (!window.epson) {
@@ -1505,6 +1504,13 @@
 	window.epson.CanvasPrint = window.epson.CanvasPrint || CanvasPrint
 	window.epson.fiscalPrint = fiscalPrint
 	window.epson.encodeBase64Binary = encodeBase64Binary
+	window.epson = {
+		ePOSBuilder: ePOSBuilder,
+		ePOSPrint: ePOSPrint,
+		fiscalPrint: fiscalPrint,
+		CanvasPrint: CanvasPrint,
+		encodeBase64Binary: encodeBase64Binary
+	};
 
 
 })(window);
