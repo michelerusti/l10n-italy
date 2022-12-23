@@ -1,4 +1,5 @@
 # Copyright 2017 Francesco Apruzzese <f.apruzzese@apuliasoftware.it>
+# Copyright 2022 Michele Rusticucci <michele.rusticucci@agilebg.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
@@ -77,8 +78,8 @@ class AccountMove(models.Model):
         ).read()[0]
         return action
 
-    def action_post(self):
-        res = super().action_post()
+    def _post(self, soft=True):
+        posted = super()._post(soft)
         # Check if there is enough available amount on declarations
         for invoice in self:
             declarations = invoice.get_declarations()
@@ -112,7 +113,7 @@ class AccountMove(models.Model):
             grouped_lines = self.get_move_lines_by_declaration(lines)
             invoice.update_declarations(declarations, grouped_lines)
 
-        return res
+        return posted
 
     def update_declarations(self, declarations, grouped_lines):
         """
