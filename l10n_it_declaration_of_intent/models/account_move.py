@@ -99,12 +99,7 @@ class AccountMove(models.Model):
 
             invoice.check_declarations_amounts(declarations)
 
-        # Assign account move lines to declarations for each invoice
-        for invoice in self:
-            declarations = invoice.get_declarations()
-            # If partner has no declarations, do nothing
-            if not declarations:
-                continue
+            # Assign account move lines to declarations for each invoice
             # Get only lines with taxes
             lines = invoice.line_ids.filtered("tax_ids")
             if not lines:
